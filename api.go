@@ -19,6 +19,12 @@ func NewClient(authToken string) *Client {
 	return &Client{config}
 }
 
+// NewCustomClient creates new OpenAI API client.
+func NewCustomClient(authToken, apiURL string) *Client {
+	config := CustomConfig(authToken, apiURL)
+	return &Client{config}
+}
+
 // NewClientWithConfig creates new OpenAI API client for specified config.
 func NewClientWithConfig(config ClientConfig) *Client {
 	return &Client{config}
